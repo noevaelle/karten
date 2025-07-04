@@ -1,0 +1,55 @@
+<html>
+<head>
+  <title>{$settings['bbname']} – {$imageTitle}</title>
+  {$headerinclude}
+</head>
+<body>
+  {$header}
+
+  <div class="karte-detail">
+    <h2>{$imageTitle}</h2>
+
+    <div class="karte-wrapper">
+      <button id="zoom-toggle">Zoom aktivieren</button>
+
+      <div class="karte-inner">
+        <img
+          id="karte-image"
+          src="{$imageUrl}"
+          data-regions="{$regions_json}"
+          data-set-location-url="{$bburl}/karten_set_user_locations.php"
+          data-icon-dir="{$imageBase}icons/"
+          alt="{$imageTitle}"
+          style="max-width:100%;height:auto;"
+        />
+      </div>
+    </div>
+
+    <div id="karte-legende" class="karte-legende"></div>
+
+	  <!-- Legendeneintrag-Template -->
+	  <script type="text/html" id="tpl_karten_legende_item">
+  <div class="legende-item">
+    <i class="{{iconCategory}} legende-icon" aria-hidden="true"></i>
+    <span class="legende-label">{{marker}} ({{location}})</span>
+  </div>
+</script>
+
+
+    <!-- Popup‐Template mit {{…}} -->
+    <script type="text/html" id="tpl_karten_popup_wrapper">
+      <div class="karten_popup_wrapper" style="width:15em;">
+        <div class="karten_popup_marker">{{marker_title}}</div>
+        <div class="karten_popup_location">{{location}}</div>
+        <div class="karten_popup_category">{{category}}</div>
+        <ul>{{users}}</ul>
+        <div class="button-block"></div>
+      </div>
+    </script>
+
+    <script src="{$bburl}/jscripts/karten/map_interaction.js"></script>
+  </div>
+
+  {$footer}
+</body>
+</html>
