@@ -1,3 +1,0 @@
-<button class="del-work" data-area-id="{AREAID}">
-  Arbeitsplatz löschen
-</button>

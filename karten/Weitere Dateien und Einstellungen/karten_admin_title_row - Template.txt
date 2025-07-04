@@ -1,6 +1,0 @@
-<tr>
-  <td class="trow1"><label for="image_title">{$lang->image_title}</label></td>
-  <td class="trow2">
-    <input type="text" name="image_title" id="image_title" size="35" value="{$title}" />
-  </td>
-</tr>
