@@ -1,0 +1,9 @@
+#bekannte Fehler, etc. 
+
+scrollbalken beim aktivieren des zooms wieder nicht angezeigt in karten_detail. 
+
+overlays in mobiler ansicht offset. 
+
+stylesheet css nicht korrekt eingebunden - inc/plugins/karten.php
+
+jobliste-plugin - kompatibilität nicht geprüft. 
