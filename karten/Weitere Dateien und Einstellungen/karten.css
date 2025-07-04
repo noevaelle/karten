@@ -1,0 +1,153 @@
+/* Übersichtskacheln */
+.karten-overview {
+  display: flex; flex-wrap: wrap;
+  justify-content: center; gap: 1em;
+  margin: 2em auto;
+}
+.karte-tile { width: 220px; text-align: center; }
+.karte-thumbnail {
+  display: block; width: 100%; height: auto;
+  transition: opacity .3s;
+}
+.karte-thumbnail:hover { opacity:.8; }
+.tile-title { margin-top:.5em; font-weight:bold; }
+
+/* Detail-Ansicht zentriert */
+.karte-detail {
+  margin: 2em auto; text-align: center;
+}
+
+/* Wrapper mit weißem Rahmen, zentriert, kein Scroll vor Zoom */
+.karte-wrapper {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  border: 8px solid #fff;
+  margin: 0 auto;
+  overflow: hidden;
+  line-height: 0;         /* kill Inline-Block whitespace */
+}
+.karte-wrapper.zoomed {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Innere Box: transform aus der Bildmitte, sanfte Transition */
+.karte-inner {
+  position: relative;
+  display: inline-block;    /* nötig für transform */
+  float:left !important;    /*sonst sitzt bild in der mitte des wrappers*/
+  vertical-align: top;      /* kein Baseline-Drift */
+  transform-origin: 0 0;
+  transition: transform .2s ease;
+}
+
+/* Bild im Flow, füllt .karte-inner */
+.karte-inner > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: default;
+}
+
+/* Toggle-Button */
+#zoom-toggle {
+  position: absolute;
+  top: 10px; right: 10px; z-index: 1000;
+  padding: .3em .6em; font-size:.9em;
+  cursor: pointer;
+}
+#zoom-toggle.active {
+  background: #0066c0; color: #fff;
+}
+
+/* Hotspots */
+.karte-hotspot {
+  position: absolute;
+  z-index: 10;
+  background: rgba(255,0,0,0.15);
+  outline: 2px dashed red;
+  cursor: pointer;
+}
+
+/* Popups */
+.karte-popup {
+  position: absolute; z-index:10010;
+  background: #fff; border:1px solid #ccc;
+  padding: 8px; box-shadow:0 0 5px rgba(0,0,0,0.2);
+}
+.karte-popup h4 { margin-bottom:.5em; font-size:1em; }
+.karte-popup ul { margin:0; padding-left:1.2em; }
+.karte-popup li { margin:.2em 0; }
+.karte-popup a.popup-link { color:#0066c0; text-decoration:underline; }
+
+.karten_popup_wrapper {
+  border:1px solid #ccc;
+  padding:.5em;
+  font-size:0.9em;
+}
+.karten_popup_marker {
+  float:left;
+  width:2em; height:2em;
+  line-height:2em;
+  text-align:center;
+  margin-right:.5em;
+  background:#888; color:#fff; border-radius:50%;
+}
+.karten_popup_location {
+  font-weight:bold;
+}
+.karten_popup_category {
+  clear:left;
+  margin-top:.5em;
+  font-style:italic;
+  color:#666;
+}
+
+/* Kategorie-spezifische Farben */
+.categoryclass_offiziell   .karten_popup_marker { background:#0066c0; }
+.categoryclass_gastronomie .karten_popup_marker { background:#c0392b; }
+.categoryclass_handel      .karten_popup_marker { background:#27ae60; }
+/* …usw. */
+
+.karte-marker {
+  position: absolute;
+  top: 0; left: 0;
+  width: 0.3em; height: 0.3em;
+  line-height: 0em;
+  text-align: center;
+  border-radius: 50%;
+  background: #0066c0; /* Default */
+  opacity:0.8;
+  color: #fff;
+  font-size: 1em;
+  font-weight: bold;
+}
+/* pro Kategorie überschreiben */
+.karte-marker.category-offiziell   { background: #004080; }
+.karte-marker.category-gastronomie { background: #c0392b; }
+.karte-marker.category-handel      { background: #27ae60; }
+/* usw. */
+
+.karte-legende {
+  margin-top: 1em;
+  padding: .5em;
+  border-top: 1px solid #ccc;
+  display: flex;
+  flex-wrap: wrap;
+}
+.karte-legende .legende-item {
+  margin-right: 1.5em;
+  display: flex;
+  align-items: center;
+}
+.karte-legende .legende-icon {
+  margin-right: .3em;
+}
+
+.legende-icon {
+  margin-right: .3em;
+  width: 1em; height: 1em;
+  text-align: center;
+  color: #666;
+}
