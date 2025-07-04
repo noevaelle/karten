@@ -1,3 +1,0 @@
-<button class="set-work" data-area-id="{AREAID}">
-  Arbeitsplatz wählen {COUNTER}
-</button>
