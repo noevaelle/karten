@@ -1,5 +1,7 @@
 # Kartenverwaltung-Plugin
 
+!! ACHTUNG - aktuell zwei files in /inc/plugins/ - die 'neue' karten sollte alle tabellen, templates schon kreieren, ist aber noch nicht getestet. die 'alte' sollte funktionieren, ist aber unvollständig, glaube ich. prüfe ich am WE noch. :) und das css müsste ein falscher code sein, in der neuen datei. infos zu templates und css: in dem ordner 'weitere einstellungen' - infos zur datenbank - hier in der readme. :) !! 
+
 Interaktive Karten-Module: Regionen (aus Profilfeldern) definieren, Genaue(re) Wohnorte (aus Profilfeldern) zuweisen, eigene Kartenbilder hochladen, Crop-Tool um aus Bild frei Markierungen zu setzen, Legende mit Icons.
 
 Falls jobliste-Plugin (Jule) aktiv: sollte kompatibel sein. (Noch nicht getestet.) 
