@@ -3,7 +3,7 @@
  * Plugin Name: Kartenverwaltung
  * Beschreibung: Dynamische Kartenverwaltung mit Benutzer-Standorten, Bild-Upload, Kategorien & Legende.
  * Autor:      noe
- * Version:     2.2.1
+ * Version:     2.2.1 - NEU - NOCHT NICHT GETESTET
  * Compatibility: 18*
  */
 
@@ -16,7 +16,7 @@ function karten_info() {
         'name'          => 'Kartenverwaltung',
         'description'   => 'Interaktive Karten mit Regionen-/Standort-Hotspots, Crop-Tool, Icons und Nutzerzuordnung.',
         'author'        => 'noe',
-        'version'       => '2.2.1',
+        'version'       => '2.2.1' - NEU - NOCH NICHT GETESTET,
         'compatibility' => '18*'
     ];
 }
